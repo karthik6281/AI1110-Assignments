@@ -1,13 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# In[13]:
-
-
-#Code- for calculation of mode of given data.
-
-# Pericherla Pranav Varma
-# CS21BTECH11044
 
 import numpy as np
 import matplotlib.pyplot as plt

@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 # Importing data from excel
-read = pd.read_excel(r'Tables/raw_data.txt')
+read = pd.read_table(r'Tables/raw_data.txt')
 raw_data = np.array(read)
 
 # Generating class intervals

@@ -1,0 +1,79 @@
+\documentclass[journal,12pt,twocolumn]{beamer}
+\usetheme{CambridgeUS}
+\usepackage[utf8]{inputenc}
+
+\usepackage{tfrupee}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+
+
+
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\let\vec\mathbf
+
+\title{Assignment 4}
+\author{Ravula Karthik (AI21BTECH11024)}
+\date {May 2022}
+\begin{document}
+	\begin{frame}
+		\titlepage 
+	\end{frame}
+	
+	\begin{frame}{Question : NCERT Class 12 Exercise 13.3 Problem 4}
+		
+		\textbf{Suppose a girl throws a die.if she gets a $5$ or $6$,she tosses a coin three times and notes the number of heads.if she gets $1$,$2$,$3$ or $4$ ,she tosses a coin once and notes whether a head or tail is obtained.If she obtained exactly one head,what is the probability that she threw $1$,$2$,$3$ or $4$ with the die? }
+	\end{frame}
+	\begin{frame}{Solution}
+		
+		Let us define random variables X,Y, where X,Y $\in \cbrak{0,1}$ ,such that
+		
+		\begin{table}[ht!]
+			\input{./Tables/Table_1.tex}
+			\caption{RANDOM VARIABLES}
+		\end{table}
+	\end{frame}
+	\begin{frame}
+		from the given data 
+		
+	\begin{align}
+			&P_X(0) = \frac{2}{6} \\ 
+			&P_X(1) = \frac{4}{6} \\ 
+			&P_Y(0) = \frac{1}{2} \\ 
+			&P_Y(1) = \frac{3}{8} 
+	\end{align}  
+	\end{frame}
+	
+	
+	\begin{frame}
+	   	From Bayes theorem ,
+		
+		\begin{align}
+			\implies &P_{X/Y}(1/0) =\frac{P((X=1) (Y=0))}{P_Y(0)} \\
+			\implies &P_{X/Y}(1/0) =\frac{P_X(1) \times P_{Y/X}(0/1) }{P_Y(0)} \\
+			\implies &P_{X/Y}(1/0) =\frac{P_X(1) \times P_{Y/X}(0/1) }{P_X(1) \times P_{Y/X}(0/1) + P_X(1) \times P_{Y/X}(1/1) } 
+		\end{align} 
+		
+	\end{frame}
+     \begin{frame}
+        	\begin{align}
+        	\implies &P_{X/Y}(1/0) =\frac{\frac{4}{6} \times \frac{1}{2}}{\frac{4}{6} \times \frac{1}{2} + \frac{2}{6} \times \frac{3}{8} } \\
+        	\implies &P_{X/Y}(1/0) =\frac{8}{11}
+            \end{align} 
+        
+      $\therefore$  The probability that she threw $1$,$2$,$3$ or $4$ with the die is $\frac{8}{11}$ .
+      
+    \end{frame}
+	
+\end{document}

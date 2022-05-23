@@ -1,3 +1,7 @@
+# RAVULA KARTHIK AI21BTECH11024
+# X/S denotes the probability of X arriving before Y
+# Y/S denotes the probability of Y and X meet at the station
+#
 import numpy as np
 
 S = 400

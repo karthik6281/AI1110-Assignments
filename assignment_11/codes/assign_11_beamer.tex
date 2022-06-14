@@ -1,0 +1,73 @@
+\documentclass[journal,12pt,twocolumn]{beamer}
+\usetheme{CambridgeUS}
+\usepackage[utf8]{inputenc}
+
+\usepackage{tfrupee}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+
+
+
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\let\vec\mathbf
+
+\title{Assignment 11}
+\author{Ravula Karthik (AI21BTECH11024)}
+\date {June 2022}
+\begin{document}
+	\begin{frame}
+		\titlepage 
+	\end{frame}
+	
+	\begin{frame}{Question : EX 10.21}
+		Given a WSS process $x(t)$ and a set of Poisson points t independent of $x(t)$ and with
+		average density $\lambda$. we form the sum
+		
+		$ X_c\brak{w} = \sum_{|t_i|\leq c} x\brak{t_i} e^{-jwt_i} $
+		
+		Show that if $E\cbrak{x(t)}$ = 0 and $\int_{-\infty}^{\infty} |{X_c(w)}| d\tau < \infty,$ then for large c 
+		$E\cbrak{|{X_c(w)}^2|} = 2cS_x(w) + \frac{2c}{\lambda}R_x(0)$ .
+		
+	\end{frame}
+	\begin{frame}{Solution}
+	
+	We shall show that if
+	\begin{align}
+		\underline{X}_c(w) &= \frac{1}{\lambda}\sum_{|{t_i}| \leq c}\underline{x}\brak{t_i} e^{-jwt_i} \nonumber \\
+		&= \frac{1}{\lambda}\int_{-a}^{a}\underline{x}\brak{t}\underline{z}\brak{t}e^{-jwt} \nonumber
+	\end{align}
+	
+	where $z(t)$ = $\sum \delta(t-\underline{t_i}) $ is a Poisson impulse train, then
+	
+	$E\cbrak{|{X_c(w)}^2|} = 2cS_x(w) + \frac{2c}{\lambda}R_x(0)$
+	
+	\end{frame}
+	
+	\begin{frame}
+	\underline{proof} 
+	
+	Since $R_z(\tau)$ = $\lambda^2 +\lambda\delta(r) $ , it follows that
+	
+	\begin{align}
+		E\cbrak{|{\underline{X}_c(w)^2}|} &= \frac{1}{\lambda^2}\int_{-c}^{c}\int_{-c}^{-c} R_x(t_1-t_2)e^{-jw(t_1-t_2)}dt_1dt_2 \\
+		&= \int_{-c}^{c} e^{jwt_2}\int_{-c}^{-c} R_x(t_1-t_2)e^{-jwt_1}dt_1dt_2 +\frac{1}{\lambda}\int_{-c}^{c}R_x(0)dt_2
+	\end{align} 
+	
+	If $\int_{-\infty}^{\infty}|{R_x(\tau)}| < \infty$ then for sufficient large c , the inner integral on the right is nearly equal to $S_x(w)e^-jwt_2 $ and (i) follows.
+	
+	\end{frame}
+	
+	
+\end{document}

@@ -293,7 +293,7 @@ while(fscanf(fp_1,"%lf",&a)!= EOF )
 {
 //going through lines
 
-k = (-2*log(1-a))/0.4343 ;
+k = (-2*log(1-a)) ;
 
 fprintf(fp_2,"%lf\n",k);
 }
